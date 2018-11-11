@@ -1,0 +1,316 @@
+<span class="building">
+  SITE EM CONSTRUÇÃO
+</span>
+<div class="menu-mobile">
+  <div class="wrap-header-menu">
+    <span class="logo-img-mobile" [ngClass]="{'animated fadeInLeft' : animateLogo}">
+      <img src="https://ferbo.com.br/img/logotipo-mobile.png" alt="">
+    </span>
+    <span (click)="openMenuMobile()">
+      <svg style="width:47px;height:47px" viewBox="0 0 24 24">
+        <path fill="#444" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+      </svg>
+    </span>
+  </div>
+  <div class="nav-mobile" [ngClass]="{'animated-fast zoomIn' : menuMobile}" *ngIf="menuMobile === true">
+    <div class="wrap-header-menu">
+      <span class="logo-img-mobile">
+        <img src="https://ferbo.com.br/img/logotipo-mobile.png" alt="">
+      </span>
+      <span>
+        <svg style="width:47px;height:47px" viewBox="0 0 24 24" [ngClass]="{'animated zoomIn' : menuMobile}" *ngIf="menuMobile === true"
+          (click)="closeMenuMobile()">
+          <path fill="#E64545" d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+        </svg>
+      </span>
+    </div>
+    <div class="wrap-links-menu-mobile">
+      <span>
+        <a routerLink="home" (click)="closeMenuMobile()">Home</a>
+      </span>
+      <span>
+        <a routerLink="quem-somos" (click)="closeMenuMobile()">quem somos</a>
+      </span>
+      <span>
+        <a routerLink="como-funciona" (click)="closeMenuMobile()">Como funciona</a>
+      </span>
+      <span>
+        <a routerLink="planos" (click)="closeMenuMobile()">Planos</a>
+      </span>
+      <span>
+        <a routerLink="contato" (click)="closeMenuMobile()">Conato</a>
+      </span>
+      <span *ngIf="hideBts === false">
+        <a routerLink="cadastro" (click)="closeMenuMobile()">Cadastro</a>
+      </span>
+      <span *ngIf="hideBts === false">
+        <a routerLink="login" (click)="closeMenuMobile()">Login</a>
+      </span>
+      <span *ngIf="myAccount === true">
+        <a routerLink="vchome" (click)="closeMenuMobile()">Minha Conta</a>
+      </span>
+      <span *ngIf="myAccountBsnss === true">
+        <a routerLink="bsnsshome" (click)="closeMenuMobile()">Minha Conta</a>
+      </span>
+
+
+    </div>
+  </div>
+</div>
+<div class="bg-init"></div>
+<section class="my-home hide-mobile">
+  <nav class="fh5co-nav" role="navigation">
+    <div class="top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-right align-v-icon">
+            <p class="num">contato@ferbo.com.br</p>
+            <a class="align-v-icon" href="https://www.linkedin.com/company/ferbo-video-curriculos/" target="_blank">
+              <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                <path fill="#ccc" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+              </svg>
+            </a>
+            <a class="align-v-icon" target="_blank" href="https://www.facebook.com/ferborh/">
+              <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                <path fill="#ccc" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="top-menu">
+      <div class="container">
+        <div class="row align-logo">
+          <div class="col-xs-1">
+            <div id="fh5co-logo">
+              <a routerLink="home">
+                <img src="https://ferbo.com.br/img/logotipo-ferbo.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-xs-11 text-right menu-1">
+            <ul>
+              <li>
+                <a routerLink="home">Home</a>
+              </li>
+              <li>
+                <a routerLink="quem-somos">Quem Somos</a>
+              </li>
+              <li>
+                <a routerLink="como-funciona">Como funciona</a>
+              </li>
+              <li>
+                <a routerLink="planos">Planos</a>
+              </li>
+              <li>
+                <a routerLink="contato">Contato</a>
+              </li>
+              <li class="btn-cta" *ngIf="hideBts === false">
+                <a routerLink="cadastro">
+                  <span>Cadastro</span>
+                </a>
+              </li>
+              <li class="btn-cta" *ngIf="hideBts === false">
+                <a routerLink="login">
+                  <span>Login</span>
+                </a>
+              </li>
+              <li class="btn-cta" *ngIf="myAccount === true">
+                <a routerLink="vchome">
+                  <span>Minha conta</span>
+                </a>
+              </li>
+              <li class="btn-cta" *ngIf="myAccountBsnss === true">
+                <a routerLink="bsnsshome">
+                  <span>Minha conta</span>
+                </a>
+              </li>
+              <!-- <li>
+              <a routerLink="cursos">Cursos</a>
+            </li> -->
+              <!-- <li class="has-dropdown">
+              <a routerLink="vagas">Vagas Disponíveis</a>
+            </li> -->
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</section>
+<router-outlet></router-outlet>
+<section class="footer">
+  <div class="block-footer">
+    <div class="block-footer-wrap">
+      <span class="block-footer-inner link" routerLink="planos">Planos</span>
+      <span class="block-footer-inner link" routerLink="cadastro">Cadastro</span>
+      <span class="block-footer-inner link" (click)="openModalTerms()">Termos de Utilização</span>
+      <span class="block-footer-inner link" (click)="openModalPrivacidade()">Política de Privacidade</span>
+    </div>
+    <div class="block-footer-wrap">
+      <span class="block-footer-inner central">Assine nossa newsletter e fique por dentro do mercado de vídeo
+        currículos</span>
+      <span class="block-footer-inner central">
+        <input class="input-search central" type="text" placeholder="Insira seu melhor e-mail aqui">
+      </span>
+      <span class="block-footer-inner">
+        <button class="btn btn-primary central">Assinar</button>
+      </span>
+    </div>
+    <div class="block-footer-wrap">
+      <p class="central">Conheça-nos através de nossas redes sociais</p>
+      <span class="block-footer-inner central">
+        <a href="https://www.linkedin.com/company/ferbo-video-curriculos/" target="_blank">
+          <svg style="width:50px;height:50px" viewBox="0 0 24 24">
+            <path fill="#f7f7f7" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/ferborh/" target="_blank">
+          <svg style="width:50px;height:50px" viewBox="0 0 24 24">
+            <path fill="#f7f7f7" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
+          </svg>
+        </a>
+      </span>
+    </div>
+
+  </div>
+  <span class="line-footer"></span>
+  <img src="https://ferbo.com.br/img/logotipo-ferbo-footer.png" alt=""> Copyright - Todos os direitos reservados
+</section>
+<div class="modal animated-fast slideInUp" *ngIf="termos === true">
+  <span class="close-modal">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24" (click)="closeModalTerms()">
+      <path fill="#fff" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+    </svg>
+  </span>
+  <br>
+  <div class="container">
+    <h1 class="font-adpt white central">TERMOS DE UTILIZAÇÃO</h1>
+    <h2 class="font-adpt white">A ACEITAÇÃO DESTES TERMOS DE USO É REQUISITO NECESSÁRIO PARA A UTILIZAÇÃO DA FERBO, COM
+      TODAS AS SUAS FUNCIONALIDADES.
+      DESTA FORMA, FICA CLARO QUE A UTILIZAÇÃO DA FERBO IMPLICARÁ NA EXPRESSA E INEQUÍVOCA ACEITAÇÃO INTEGRAL DAS
+      CONDIÇÕES
+      ESTABELECIDAS NO PRESENTE. TODOS OS USUÁRIOS DECLARAM QUE LERAM, CERTIFICARAM-SE DE TÊ-LO ENTENDIDO E ACEITAM AS
+      CONDIÇÕES
+      NELE ESTABELECIDAS.</h2>
+    <h1 class="font-adpt white">1. DO OBJETO E DOS REQUISITOS</h1>
+    <p class="white">1.1 Estes Termos de Uso aplicam-se ao uso da FERBO pelo Usuário. A FERBO é uma plataforma online
+      de recrutamento e seleção,
+      destinada a conectar empresas a candidatos de uma forma rápida e eficiente a fim de otimizar os processos
+      seletivos
+      para ambos os usuários, sejam eles profissionais ou empresas.</p>
+    <h1 class="font-adpt white">2. DOS SERVIÇOS/PLANOS OFERECIDOS</h1>
+    <p class="white">2.1. O usuário (profissional) poderá ter acesso a dois tipos de planos, no plano VC GRÁTIS o
+      usuário terá direito somente
+      de fazer o seu cadastro e gravar e postar (incluir no site) o seu Vídeo Currículo de até 60 segundos na
+      plataforma.</p>
+    <p class="white">2.2. No plano VC PLUS o usuário (profissional) terá além do direito de fazer o seu cadastro e
+      gravar e postar (incluir
+      no site) o seu Vídeo Currículo de até 60 segundos na plataforma, poderá também realizar a Edição do Vídeo
+      Currículo,
+      Suporte para ajustes na gravação e edição do Vídeo Currículo, e por fim receber Avisos ilimitados de
+      visualizações
+      em seu perfil do vídeo currículo.</p>
+    <p class="white">2.3. O usuário (empresa) poderá ter acesso a dois tipos de planos, no plano EMPRESA o usuário terá
+      direito de fazer o
+      seu cadastro, ter Acesso ilimitado a todos os vídeos currículos e a Possibilidade de escolha pelo perfil do Vídeo
+      Currículo.</p>
+    <p class="white">2.4. No plano EMPRESA PLUS o usuário (empresa) terá além do direito de fazer o seu cadastro, ter
+      Acesso ilimitado a todos
+      os vídeos currículos, a Possibilidade de escolha pelo perfil do Vídeo Currículo, poderá também ter o
+      Recrutamento,
+      e uma pré-seleção realizada pela equipe de Recursos Humanos e encaminhamento dos Vídeos Currículos.</p>
+    <p class="white">2.5. ATENÇÃO: A ASSINATURA DE CONTRATO FERBO NÃO GARANTE, EM NENHUMA HIPÓTESE, PROMESSA DE EMPREGO
+      OU OBRIGAÇÃO PRESENTE
+      OU FUTURA DE RECOLOCAÇÃO OU OBTENÇÃO DE EMPREGOS PARA O USUÁRIO E NÃO REALIZA QUALQUER COBRANÇA RELACIONADA A
+      ESSAS
+      ATIVIDADES.
+    </p>
+    <h1 class="font-adpt white">3. DOS DIREITOS E DEVERES</h1>
+    <p class="white">3.1. A FERBO permitirá ao usuário acesso 24 (vinte e quatro) horas por dia e 07(sete) dias por
+      semana, contudo, o usuário
+      reconhece que por se tratar de uma ferramenta online poderá, eventualmente, ocorrer a interrupção ou suspensão do
+      acesso.
+      Desta forma, a FERBO não garante o acesso de forma totalmente ininterrupta, tendo em vista a dependência de
+      serviços
+      de telecomunicações prestados por terceiros.</p>
+    <p class="white">3.2. A FERBO se reserva ao direito de efetuar eventuais manutenções em seus sistemas, quando
+      ocorrerem situações extraordinárias
+      ou imprevisíveis, bem como visando melhorias, ainda que efetue modificações ou alterações, independente de prévio
+      aviso,
+      salvo na hipótese do sistema ficar fora do ar por período determinado.</p>
+    <p class="white">3.3. A FERBO se reserva ao direito de excluir usuário e seu registro de login e senha, ou qualquer
+      vídeo currículo que
+      apresente informações que não sejam verdadeiras, divergências de dados ou que não estejam compatíveis com as
+      nossas
+      políticas, além de qualquer procedimento indevido por ele praticado, tais como, mas não se limitando a, postagens
+      inadequadas
+      como nudez, palavras de baixo calão, ofensas e correlatos.</p>
+    <p class="white">3.4. A FERBO não participa de eventuais negociações, tratativas do usuário com a eventual empresa
+      contratante, não podendo
+      assim ser responsabilizada por perdas e danos de qualquer espécie que venham a ser conhecidas em decorrência de
+      tais
+      negociações, sejam contratuais, extracontratuais ou de qualquer outra natureza, perante ela ou terceiros.</p>
+    <p class="white">3.5. O usuário declara estar ciente da autorização que concede a FERBO para que a mesma mantenha
+      seu vídeo currículo
+      em sua base de dados, bem como qualquer outra informação que o usuário porventura vier a incluir no site. Estes
+      documentos,
+      em nenhum momento serão modificados pela FERBO, mas poderão ser usados para eventuais analytics, pesquisas e/ou
+      banco
+      de dados, podendo ser vendido ou compartilhado com parceiros.</p>
+    <h1 class="font-adpt white">4. DO REGISTRO, DA CONTA, USUÁRIO, SENHA E SEGURANÇA</h1>
+    <p class="white">4.1. O usuário se compromete a fornecer informações verdadeiras, exatas, atuais e completas no
+      preenchimento dos campos
+      solicitados no registro, bem como a conservar e atualizar essas informações, a fim de mantê-las verdadeiras,
+      exatas,
+      atuais e completas (a título exemplificativo, citamos o artigo 299 do Código Penal de 1940, não excluindo os
+      demais
+      dispositivos legais aplicáveis).</p>
+  </div>
+</div>
+<div class="modal animated-fast slideInUp" *ngIf="pPrivacidade === true">
+  <span class="close-modal">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24" (click)="closeModalPrivacidade()">
+      <path fill="#fff" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+    </svg>
+  </span>
+  <div class="container">
+    <h1 class="font-adpt white central">POLÍTICA DE PRIVACIDADE</h1>
+    <h2 class="font-adpt white">A ACEITAÇÃO DESTES TERMOS DE USO É REQUISITO NECESSÁRIO PARA A UTILIZAÇÃO DA FERBO, COM
+      TODAS AS SUAS FUNCIONALIDADES.
+      DESTA FORMA, FICA CLARO QUE A UTILIZAÇÃO DA FERBO IMPLICARÁ NA EXPRESSA E INEQUÍVOCA ACEITAÇÃO INTEGRAL DAS
+      CONDIÇÕES
+      ESTABELECIDAS NO PRESENTE. TODOS OS USUÁRIOS DECLARAM QUE LERAM, CERTIFICARAM-SE DE TÊ-LO ENTENDIDO E ACEITAM AS
+      CONDIÇÕES
+      NELE ESTABELECIDAS.</h2>
+    <h1 class="font-adpt white">1. POLÍTICA DE PRIVACIDADE E DIVULGAÇÃO DE INFORMAÇÕES</h1>
+    <p class="white">1.1. Os dados pessoais fornecidos pelos usuários serão mantidos em total segurança pela equipe
+      FERBO e poderão ser utilizados
+      para fins de melhoria na Plataforma, atualização cadastral ou para migrações internas entre bases de dados,
+      sempre
+      sob supervisão e não serão divulgados publicamente.</p>
+    <p class="white">1.2. Tendo em vista que a FERBO utiliza dados e análise de comportamentos dos seus usuários, o
+      usuário autoriza a FERBO
+      a preservar e armazenar os dados e informações enviados à Plataforma pelo usuário, observados as garantias deste
+      capítulo.</p>
+    <p class="white">1.3. O Usuário autoriza a FERBO a informar e/ou divulgar os dados disponíveis na Plataforma em
+      caso de exigência legal
+      ou para fazer cumprir estes Termos.</p>
+    <p class="white">1.4. O Usuário expressamente reconhece e concorda que a FERBO poderá fornecer a parceiros
+      comerciais interessados dados
+      e informações gerais obtidos a partir do seu banco de dados, incluindo, sem limitação, informações a respeito de
+      padrões
+      de comportamento, hábitos de consumo e outras estatísticas. Referidos dados e informações em nenhuma hipótese
+      indicarão
+      o nome do usuário ou serão apresentados de modo que possam ser identificados como lhe sendo atribuídos
+      especificamente.
+      Nestes casos, a FERBO sempre pedirá a autorização do Usuário para compartilhamento dos dados, para qual parceiro,
+      quais
+      informações e com qual propósito.</p>
+    <p class="white">1.5. Observadas as garantias deste capítulo, a FERBO poderá manter informações coletadas em razão
+      do uso da Plataforma
+      pelo usuário mesmo após o encerramento de sua conta e sem identificação do usuário.</p>
+  </div>
+</div>

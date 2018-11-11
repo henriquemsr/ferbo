@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="central orange mt20 animated-fast fadeInDown font-adpt-title">Formulário de Contato</h1>
+</div>
+<div>
+  <div class="form animated-fast fadeInUp">
+    <input type="text" class="input-form" placeholder="Nome" [(ngModel)]="nome">
+    <input type="text" class="input-form" placeholder="Telefone" [(ngModel)]="telefone">
+    <input type="text" class="input-form" placeholder="Email" [(ngModel)]="email">
+    <input type="text" class="input-form" placeholder="Assunto" [(ngModel)]="assunto">
+    <textarea class="text-area-form" placeholder="Escreva o texto aqui" name="" id="" cols="30" rows="10"></textarea>
+
+    <div class="line-bts">
+      <a class="btn btn-success btn-outline bt-align" (click)="register()">ENVIAR</a>
+    </div>
+  </div>
+</div>

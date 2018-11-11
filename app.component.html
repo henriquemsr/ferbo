@@ -1,0 +1,20 @@
+<div class="wrap-app">
+  <div class="menu-sidebar">
+    <span class="logotipo" routerLink="home" (click)="selHome()">
+      <img src="http://hlgrafica.com.br/logotipo-hl-grafica.png" alt="">
+    </span>
+    <span class="link-menu" [ngClass]="{'link-menu-selected' : cliente}" routerLink="clientes" (click)="selCliente()">clientes</span>
+    <span class="link-menu" [ngClass]="{'link-menu-selected' : lancamentos}" routerLink="lancamentos" (click)="selLancamento()">lançamentos</span>
+    <span class="link-menu" routerLink="pedidos" [ngClass]="{'link-menu-selected' : pedidos}" (click)="selPedidos()">pedidos</span>
+    <span class="link-menu" routerLink="pedidos" [ngClass]="{'link-menu-selected' : relatorios}" (click)="selRelatorios()">relatórios</span>
+    
+  </div>
+  <div class="wrap-page">
+    <div class="menu-navbar">
+      Aqui vai ser a navbar
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1 class="central orange font-adpt-title mt20">Selecione uma opção abaixo para Login</h1>
+</div>
+
+  <h1 class="central red font-adpt-title mt10" [ngClass]="{'animated-slow fadeOut' : msgError}" *ngIf="msgError === true">Dados não conferem, tente novamente</h1>
+
+
+<div class="my-tab animated-fast fadeInDown">
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': loginVideo}" (click)="openLoginVideo()">VÍDEO CURRÍCULOS</span>
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': loginBusiness}" (click)="openLoginBusiness()">EMPRESAS</span>
+</div>
+<div *ngIf="loginVideo === true">
+  <h1 class="central blue mt20 animated-fast fadeInDown font-adpt-title">Formulário de Login Vídeo Currículo</h1>
+  <div class="form animated-fast fadeInUp">
+    <input type="text" class="input-form" placeholder="Email" [(ngModel)]="username">
+    <input type="password" class="input-form" placeholder="Senha" [(ngModel)]="password">
+    <div class="line-bts">
+      <a class="btn btn-success btn-outline bt-align" (click)="getVcUser()">ENTRAR</a>
+      <a class="btn btn-info btn-outline bt-align" (click)="doGoogleLogin()">ENTRAR COM GOOGLE</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="loginBusiness === true">
+  <h1 class="central blue mt20 animated-fast fadeInDown font-adpt-title">Formulário de Login Empresa</h1>
+  <div class="form animated-fast fadeInUp">
+    <input type="text" class="input-form" placeholder="Email" [(ngModel)]="mailBusiness">
+    <input type="password" class="input-form" placeholder="Senha" [(ngModel)]="passBusiness">
+    <div class="line-bts">
+      <a class="btn btn-success btn-outline bt-align" (click)="getBusinessUser()">ENTRAR</a>
+    </div>
+  </div>
+</div>
+<div class="modal" *ngIf="load === true">
+  <img src="https://ferbo.com.br/img/load-video-curriculo.gif" alt="">
+</div>
+<div *ngIf="afAuth.user | async as user; else showLogin"></div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()">Login with Google</button>
+</ng-template>

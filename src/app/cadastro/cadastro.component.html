@@ -1,0 +1,201 @@
+<div class="container">
+  <h1 class="central orange font-adpt-title mt20">Selecione uma opção abaixo para cadastro</h1>
+</div>
+<div class="my-tab animated-fast fadeInDown">
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': registerVideo}" (click)="selectVideo()">VÍDEO
+    CURRÍCULOS</span>
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': registerBusiness}" (click)="selectBusiness()">EMPRESAS</span>
+</div>
+<div *ngIf="registerVideo === true">
+  <h1 class="central blue mt20 animated-fast fadeInDown font-adpt-title">Cadastre seu Vídeo Currículo!</h1>
+  <h1 class="central green mt20 animated-fast fadeInUp font-adpt" *ngIf="btChoicePlanUserVc === true">PLANO VÍDEO
+    CURRÍCULO SELECIONADO</h1>
+  <h1 class="central green mt20 animated-fast fadeInUp font-adpt" *ngIf="btChoicePlanUserPlus === true">PLANO VC PLUS
+    SELECIONADO</h1>
+  <div class="central">
+    <span class="plan-choice" [ngClass]="{'plan-choice-selected' : btChoicePlanUserVc}" (click)="selectPlanVc()">plano
+      VC - GRÁTIS</span>
+    <span class="plan-choice" [ngClass]="{'plan-choice-selected' : btChoicePlanUserPlus}" (click)="selectPlanPlus()">plano
+      VC PLUS - R$ 19,90*</span>
+  </div>
+  <span class="central normal-blue mt20 bt20 link" (click)="goPlanos()">Consulte detalhes de todos os planos aqui</span>
+  <span class="central red" *ngIf="infoWhats === true">Utilize DDD de sua cidade + número, sem espaço e sem caracteres
+    especiais.
+    <br> exemplo: 11000000000</span>
+  <div class="form animated-fast fadeInUp">
+    <div class="line-form">
+      <input type="text" class="input-form" placeholder="Nome" [(ngModel)]="name" (keyup)="toTrue()">
+      <input type="text" class="input-form" placeholder="CPF" [(ngModel)]="cpf">
+    </div>
+    <div class="line-form">
+      <input type="text" class="input-form info-whats" placeholder="Telefone" [(ngModel)]="telefone" (keyup)="toTrue();infoApiWhats()">
+      <input type="email" class="input-form" placeholder="Email" [(ngModel)]="email" (keyup)="toTrue()">
+    </div>
+    <div class="line-form">
+      <input type="password" class="input-form" placeholder="Senha" [(ngModel)]="password" (keyup)="toTrue()">
+      <input type="password" class="input-form" placeholder="Repetir Senha" [(ngModel)]="passwordView" (keyup)="toTrue()">
+    </div>
+    <span class="central">Escolha seu Perfil Profissional</span>
+    <div class="line-row-bt">
+      <div class="line-column-bt">
+        <div class="bt-choice" [ngClass]="{'bt-choice-selected' : btEstagio}" (click)="fbtEstagio()">
+          <span>
+            <img src="https://ferbo.com.br/img/perfil-estagiario-ferbo-video-curriculo.png" alt="Perfil Estagiario Ferbo Video Curriculo"
+              title="Perfil Estagiario Ferbo Video Curriculo">
+          </span>
+          <span>Estagiário</span>
+        </div>
+      </div>
+      <div class="line-column-bt">
+        <div class="bt-choice" [ngClass]="{'bt-choice-selected' : btEstudante}" (click)="fbtEstudante()">
+          <img src="https://ferbo.com.br/img/perfil-estudante-ferbo-video-curriculo.png" alt="Perfil Estudante Ferbo Video Curriculo"
+            title="Perfil Estudante Ferbo Video Curriculo">
+          <span>Estudante</span>
+        </div>
+      </div>
+      <div class="line-column-bt">
+        <div class="bt-choice" [ngClass]="{'bt-choice-selected' : btTrainee}" (click)="fbtTrainee()">
+          <img src="https://ferbo.com.br/img/perfil-trainee-ferbo-video-curriculo.png" alt="Perfil Trainee Ferbo Video Curriculo"
+            title="Perfil Trainee Ferbo Video Curriculo">
+          <span>Trainee</span>
+        </div>
+      </div>
+      <div class="line-column-bt">
+        <div class="bt-choice" [ngClass]="{'bt-choice-selected' : btIniciante}" (click)="fbtIniciante()">
+          <img src="https://ferbo.com.br/img/perfil-iniciante-ferbo-video-curriculo.png" alt="Perfil Iniciante Ferbo Video Curriculo"
+            title="Perfil Iniciante Ferbo Video Curriculo">
+          <span>Iniciante</span>
+        </div>
+      </div>
+      <div class="line-column-bt">
+        <div class="bt-choice" [ngClass]="{'bt-choice-selected' : btProfissional}" (click)="fbtProfissional()">
+          <span>
+            <img src="https://ferbo.com.br/img/perfil-profissional-ferbo-video-curriculo.png" alt="Perfil Profissional Ferbo Video Curriculo"
+              title="Perfil Profissional Ferbo Video Curriculo">
+          </span>
+          <span>Profissional</span>
+        </div>
+      </div>
+    </div>
+    <span class="central link blue" (click)="openModal()">Entenda seu Perfil Profissional</span>
+    <div class="line-bts">
+      <button class="btn-register bt-align" [ngClass]="{'btn-register-green' : btRegister}" (click)="registerVcUser()">CADASTRAR</button>
+      <!-- <button class="btn-register bt-align" [ngClass]="{'btn-register-blue' : btRegisterFacebook}" (click)="socialSignIn('facebook')">ENTRAR COM FACEBOOK</button> -->
+    </div>
+  </div>
+</div>
+<div *ngIf="registerBusiness === true">
+  <h1 class="central blue mt20 animated-fast fadeInDown font-adpt-title">Formulário de Cadastro Empresa</h1>
+  <h1 class="central green mt20 animated-fast fadeInUp font-adpt" *ngIf="btChoicePlanEmpBsnss === true">PLANO EMPRESA
+    SELECIONADO</h1>
+  <h1 class="central green mt20 animated-fast fadeInUp font-adpt" *ngIf="btChoicePlanEmpBsnssPlus === true">PLANO
+    EMPRESA PLUS SELECIONADO</h1>
+  <div class="central">
+    <span class="plan-choice" [ngClass]="{'plan-choice-selected' : btChoicePlanEmpBsnss}" (click)="selectPlanBusiness()">plano
+      EMPRESA - R$ 49,90*</span>
+    <span class="plan-choice" [ngClass]="{'plan-choice-selected' : btChoicePlanEmpBsnssPlus}" (click)="selectPlanBusinessPlus()">plano
+      EMPRESA PLUS - R$ 99,90*</span>
+  </div>
+  <span class="central normal-blue mt20 bt20 link" (click)="goPlanosBusiness()">Consulte detalhes de todos os planos
+    aqui</span>
+  <div class="form animated-fast fadeInUp">
+    <div class="central-column">
+      <span>NOME EMPRESA</span>
+      <input type="text" class="input-form" placeholder="Nome Empresa" [(ngModel)]="nameBsnss">
+    </div>
+    <div class="central-column">
+      <span>NOME RESPONSÁVEL</span>
+      <input type="text" class="input-form" placeholder="Nome Responsável" [(ngModel)]="namePersonBsnss">
+    </div>
+    <div class="central-column">
+      <span>TELEFONE</span>
+      <input type="text" class="input-form" placeholder="Telefone" [(ngModel)]="telBsnss">
+    </div>
+    <div class="central-column">
+      <span>EMAIL EMPRESA</span>
+      <input type="text" class="input-form" placeholder="Email Empresa" [(ngModel)]="emailBsnss">
+    </div>
+    <div class="central-column">
+      <span>CNPJ</span>
+      <input type="text" class="input-form" placeholder="CNPJ" [(ngModel)]="cnpjBsnss">
+    </div>
+    <div class="central-column">
+      <span>SENHAS</span>
+      <input type="password" class="input-form" placeholder="Senha" [(ngModel)]="passwordBsnss">
+      <input type="password" class="input-form" placeholder="Repetir Senha" [(ngModel)]="passwordViewBsnss">
+    </div>
+    <div class="line-bts">
+      <a class="btn btn-success btn-outline bt-align" (click)="saveUserBusiness()">CADASTRAR</a>
+    </div>
+  </div>
+</div>
+<div class="modal" *ngIf="load === true">
+  <img src="https://ferbo.com.br/img/load-video-curriculo.gif" alt="">
+</div>
+<div class="modal" [ngClass]="{'animated-fast zoomIn' : modal}" *ngIf="modal === true">
+  <span class="close-modal">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24" (click)="closeModal()">
+      <path fill="#fff" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+    </svg>
+  </span>
+  <div class="container wrap-line-columns">
+    <span class="white">Estagiário</span>
+    <div class="wrap-line-row b-rad-5 border-white mt10 bt10 pd25 alig-v-center">
+      <span>
+        <img class="img-perfil" src="https://ferbo.com.br/img/perfil-estagiario-ferbo-video-curriculo.png" alt="Perfil Estagiario Ferbo Video Curriculo"
+          title="Perfil Estagiario Ferbo Video Curriculo">
+      </span>
+      <span>
+        Indicado para estudantes de Ensino Médio, Técnico, Tecnólogo ou Superior que estão em busca de uma oportunidade
+        de estágio.
+        Para ser estagiário você deve estar regularmente matriculado e frequentando curso reconhecido pelo MEC;
+      </span>
+    </div>
+    <span class="white">Estudante</span>
+    <div class="wrap-line-row b-rad-5 border-white mt10 bt10 pd25 alig-v-center">
+      <span>
+        <img class="img-perfil" src="https://ferbo.com.br/img/perfil-estudante-ferbo-video-curriculo.png" alt="Perfil Estudante Ferbo Video Curriculo"
+          title="Perfil Estudante Ferbo Video Curriculo">
+      </span>
+      <span>
+        Indicado para estudantes de Ensino Médio, Técnico, Tecnólogo ou Superior que estão em busca de uma oportunidade
+        de emprego;
+      </span>
+    </div>
+    <span class="white">Trainee</span>
+    <div class="wrap-line-row b-rad-5 border-white mt10 bt10 pd25 alig-v-center">
+      <span>
+        <img class="img-perfil" src="https://ferbo.com.br/img/perfil-trainee-ferbo-video-curriculo.png" alt="Perfil Trainee Ferbo Video Curriculo"
+          title="Perfil Trainee Ferbo Video Curriculo">
+      </span>
+      <span>
+        Indicado para jovens profissionais recém formados, que serão treinados e capacitados para ocupar posições
+        estratégicas e
+        de liderança;
+      </span>
+    </div>
+    <span class="white">Iniciante</span>
+    <div class="wrap-line-row b-rad-5 border-white mt10 bt10 pd25 alig-v-center">
+      <span>
+        <img class="img-perfil" src="https://ferbo.com.br/img/perfil-iniciante-ferbo-video-curriculo.png" alt="Perfil Iniciante Ferbo Video Curriculo"
+          title="Perfil Iniciante Ferbo Video Curriculo">
+      </span>
+      <span>
+        Indicado para profissionais em início de carreira com ou sem formação superior, com pouca experiencia na área
+        de atuação,
+        com alguns conhecimentos técnicos e buscam uma oportunidade/recolocação no mercado de trabalho. </span>
+    </div>
+    <span class="white">Profissional</span>
+    <div class="wrap-line-row b-rad-5 border-white mt10 bt10 pd25 alig-v-center">
+      <span>
+        <img class="img-perfil" src="https://ferbo.com.br/img/perfil-profissional-ferbo-video-curriculo.png" alt="Perfil Profissional Ferbo Video Curriculo"
+          title="Perfil Profissional Ferbo Video Curriculo">
+      </span>
+      <span>
+        Indicado para profissionais com ou sem formação superior, que possuam vasta experiencia na área de atuação, com
+        sólidos conhecimentos
+        técnicos e buscam uma oportunidade/recolocação no mercado de trabalho.
+      </span>
+    </div>
+  </div>
+</div>

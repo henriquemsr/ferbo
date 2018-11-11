@@ -1,0 +1,14 @@
+
+  <div class="rec-player">
+    <video [ngClass]="{'hide-video-player': !showVideoPlayer}" class="video-rec" #recVideo autoplay muted controls></video>
+    <div class="rec-actions">
+      <div class="align-bt-record-vc" *ngIf="hideStopBtn">
+        <button class="btn-record" (click)="start()"> INICIAR GRAVAÇÃO </button>
+        <button class="btn-record" *ngIf="showVideoPlayer && recordedBlobs" (click)="play()"> PLAY </button>
+        <button class="btn-record" *ngIf="showVideoPlayer && recordedBlobs" (click)="saveVC()"> SALVAR </button>
+        <button class="btn-record"*ngIf="recordedBlobs" (click)="download()"> DOWNLOAD </button>
+      </div>
+      <button class="btn-record" *ngIf="!hideStopBtn" (click)="stop()"> STOP </button>
+    </div>
+  </div>
+  <input type="file" (change)="inputFileChange($event)" />

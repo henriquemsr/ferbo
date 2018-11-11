@@ -1,0 +1,122 @@
+<div class="container mt30">
+  <h1 class="central font-adpt orange">Conheça nossos planos e serviços para dar um UP na sua carreira ou encontrar o vídeo currículo ideal para sua vaga!</h1>
+</div>
+<div class="my-tab animated slideInLeft">
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': video}" (click)="selectVideo()">VÍDEO CURRÍCULOS</span>
+  <span class="my-tab-button" [ngClass]="{'my-tab-button-selected': empresa}" (click)="selectEmpresa()">EMPRESAS</span>
+</div>
+
+<div *ngIf="video === true">
+  <h2 class="central orange bold animated zoomIn mt30 bt-30">Planos Vídeos Currículos</h2>
+  <div class="container">
+    <div class="row">
+      <div class="pricing">
+        <div class="col-md-6 animated-fast slideInRight">
+          <div class="price-box">
+            <h2 class="pricing-plan">Plano VC</h2>
+            <div class="price">
+              <sup class="orange grey">de R$ 19,90</sup>
+              <br>
+              <sup class="blue">por: GRÁTIS</sup>
+            </div>
+            <ul class="classes">
+              <li class="color">Gravação do Vídeo Currículo</li>
+              <li class="free">Gravação de Vídeo Entrevista</li>
+              <li class="color free">Suporte para ajustes na gravação e edição do Vídeo Currículo</li>
+              <li class="free">Avisos ilimitados de visualizações em seu perfil do vídeo currículo</li>
+              <li class="color">Validade por 90 dias</li>
+            </ul>
+            <div class="central">
+              <a routerLink="" class="btn btn-primary bt-align" (click)="goPlanoVcGratis()">Selecionar Plano</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 animated-fast slideInRight">
+          <div class="price-box">
+            <h2 class="pricing-plan">Plano VC Plus</h2>
+            <div class="price">
+              <sup class="orange grey">de R$ 59,90</sup>
+              <br>
+              <sup class="blue">por R$ 19,90/mês</sup>
+            </div>
+            <ul class="classes">
+              <li class="color">Gravação do Vídeo Currículo</li>
+              <li>Gravação de Vídeo Entrevista</li>
+              <li class="color ">Suporte para ajustes na gravação do Vídeo Currículo</li>
+              <li>Avisos ilimitados de visualizações em seu perfil do vídeo currículo</li>
+              <li class="color ">Validade por 90 dias</li>
+            </ul>
+            <div class="central">
+              <a routerLink="" class="btn btn-primary bt-align" (click)="goPlanoVcPlus()">Selecionar Plano</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="empresa === true">
+  <h2 class="central orange bold animated zoomIn mt30 bt-30">Plano Empresa</h2>
+  <div class="container">
+    <div class="row">
+      <div class="pricing">
+        <div class="col-md-6 animated-fast slideInRight">
+          <div class="price-box">
+            <h2 class="pricing-plan">Empresa</h2>
+            <div class="price">
+              <sup class="orange grey">de R$ 149,90</sup>
+              <br>
+              <sup class="blue">por R$ 49,90/mês</sup>
+            </div>
+            <ul class="classes">
+              <li class="color">Acesso ilimitado a todos os vídeos currículos</li>
+              <li>Possibilidade de escolha pelo perfil do Vídeo Currículo</li>
+              <li class="color free">Recrutamento, pré-seleção realizada pela equipe de Recursos Humanos e encaminhamento dos Vídeos Currículos;</li>
+              <li>Validade 90 dias</li>
+            </ul>
+            <div class="central">
+              <a routerLink="" class="btn btn-primary bt-align">Selecionar Plano</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 animated-fast slideInRight">
+          <div class="price-box">
+            <h2 class="pricing-plan">Empresa Plus</h2>
+            <div class="price">
+              <sup class="orange grey">de R$ 299,90</sup>
+              <br>
+              <sup class="blue">por R$ 99,90/mês</sup>
+            </div>
+            <ul class="classes">
+              <li class="color">Acesso ilimitado a todos os vídeos currículos</li>
+              <li>Possibilidade de escolha pelo perfil do Vídeo Currículo</li>
+              <li class="color">Recrutamento, pré-seleção realizada pela equipe de Recursos Humanos e encaminhamento dos Vídeos Currículos;</li>
+              <li>Validade 90 dias</li>
+            </ul>
+            <div class="central">
+              <a routerLink="" class="btn btn-primary bt-align">Selecionar Plano</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" [ngClass]="{'animated zoomIn' : modalInfoPlan}" *ngIf="modalInfoPlan === true">
+  <span class="close-modal">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24" (click)="closeModalInfoPlan()">
+      <path fill="#fff" d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z"
+      />
+    </svg>
+  </span>
+  <h1 class="central white">Termos de uso</h1>
+  <div class="container">
+
+    <p class="white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ullam id molestiae. Error molestiae nihil quisquam
+      aspernatur excepturi ab, ad ea autem nam adipisci amet tempore delectus quia et exercitationem.</p>
+    <p class="white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse quis saepe natus similique commodi, voluptate consequuntur
+      incidunt molestias iste non odit eius atque nulla voluptatum? Harum exercitationem voluptatibus facilis omnis?
+    </p>
+  </div>
+</div>
